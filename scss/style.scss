@@ -71,7 +71,6 @@ main{
         height:100%; 
         border-radius: 10px;
         background-color: palegreen;
-        
 
         &--read{
             @extend %stat;
