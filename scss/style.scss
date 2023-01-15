@@ -1,5 +1,11 @@
 @import 'variable';
 
+%flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 %stat{
     @extend %flex;
     flex-direction: column;
@@ -13,12 +19,6 @@
     p{
         font-size: 12px;
     }
-}
-
-%flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 * {
@@ -41,6 +41,7 @@ main{
     border-radius: 10px;
     height: 350px;
     width: 250px;
+    margin-left: 20px; 
 
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -68,7 +69,7 @@ main{
     }
 
     &__stats{
-        @extend %flex;
+        display: flex;
         margin-top: 5px;
         padding: 0;
         width: 100%;
