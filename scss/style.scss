@@ -6,8 +6,13 @@
     width:calc(100% / 3);
     text-align: center;
     color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: center;
     h3{
         line-height: 1.2;
+    }
+    p{
+        font-size: 12px;
     }
 }
 
@@ -33,6 +38,9 @@ main{
     height: 350px;
     width: 250px;
 
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+
     &__img{
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -47,14 +55,17 @@ main{
         color: $light;
         line-height: 1.4;
         padding: 15px;
+
+        transform: translateZ(30px);
         p{
             font-size: 12px;
+            margin-top: 5px;
         }
     }
 
     &__stats{
         display: flex;
-        margin-top: 10px;
+        margin-top: 5px;
         padding: 0;
         width: 100%;
         height:100%; 
@@ -64,20 +75,16 @@ main{
 
         &--read{
             @extend %stat;
-            background-color: aqua;
+            background-color: $read;
             border-end-start-radius: 10px;
         }
         &--view{
-            display: flex;
-            flex-direction: column;
-            width:calc(100% / 3);
-            background-color: rgb(74, 164, 62);
+            @extend %stat;
+            background-color: $view;
         }
         &--comment{
-            display: flex;
-            flex-direction: column;
-            width:calc(100% / 3);
-            background-color: rgb(177, 59, 179);
+            @extend %stat;
+            background-color: $comment;
             border-end-end-radius: 10px;
         }
     }
