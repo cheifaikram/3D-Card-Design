@@ -1,19 +1,24 @@
 @import 'variable';
 
 %stat{
-    display: flex;
+    @extend %flex;
     flex-direction: column;
     width:calc(100% / 3);
     text-align: center;
-    color: rgb(0, 0, 0);
-    align-items: center;
-    justify-content: center;
+    color:$dark;
+
     h3{
         line-height: 1.2;
     }
     p{
         font-size: 12px;
     }
+}
+
+%flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 * {
@@ -23,15 +28,14 @@
 }
   
 main{
+    @extend %flex;
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 .card {
-    display: flex;
+    @extend %flex;
     flex-direction: column;
     background-color: $darkblue;
     border-radius: 10px;
@@ -64,7 +68,7 @@ main{
     }
 
     &__stats{
-        display: flex;
+        @extend %flex;
         margin-top: 5px;
         padding: 0;
         width: 100%;
